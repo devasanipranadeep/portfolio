@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 5%;
+    --foreground: 213 31% 91%;
+
+    --card: 222 40% 8%;
+    --card-foreground: 213 31% 91%;
+
+    --popover: 222 40% 8%;
+    --popover-foreground: 213 31% 91%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 222 47% 5%;
+
+    --secondary: 222 35% 12%;
+    --secondary-foreground: 213 25% 78%;
+
+    --muted: 222 30% 9%;
+    --muted-foreground: 215 20% 48%;
+
+    --accent: 199 89% 48%;
+    --accent-foreground: 222 47% 5%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 222 25% 14%;
+    --input: 222 25% 14%;
+    --ring: 217 91% 60%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 222 42% 6%;
+    --sidebar-foreground: 213 25% 78%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 222 47% 5%;
+    --sidebar-accent: 222 30% 12%;
+    --sidebar-accent-foreground: 213 25% 78%;
+    --sidebar-border: 222 25% 14%;
+    --sidebar-ring: 217 91% 60%;
+
+    /* Custom tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(199 89% 48%));
+    --gradient-hero: linear-gradient(160deg, hsl(222 47% 5%), hsl(222 40% 10%), hsl(222 47% 5%));
+    --glass-bg: hsl(222 40% 7% / 0.75);
+    --glass-border: hsl(222 25% 20% / 0.4);
+    --glow-primary: 0 0 60px hsl(217 91% 60% / 0.15);
+    --glow-accent: 0 0 50px hsl(199 89% 48% / 0.12);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
+@layer components {
+  .glass-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+  }
+
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-border {
+    position: relative;
+  }
+
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: var(--gradient-primary);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .glow-primary {
+    box-shadow: var(--glow-primary);
+  }
+
+  .mesh-gradient {
+    background:
+      radial-gradient(ellipse 80% 60% at 10% 20%, hsl(217 91% 60% / 0.08), transparent),
+      radial-gradient(ellipse 60% 80% at 90% 80%, hsl(199 89% 48% / 0.06), transparent),
+      radial-gradient(ellipse 50% 50% at 50% 50%, hsl(280 60% 50% / 0.03), transparent);
+  }
+
+  .noise-overlay {
+    position: relative;
+  }
+
+  .noise-overlay::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .grid-pattern {
+    background-image:
+      linear-gradient(hsl(222 25% 14% / 0.3) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(222 25% 14% / 0.3) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .dot-pattern {
+    background-image: radial-gradient(hsl(222 25% 22% / 0.4) 1px, transparent 1px);
+    background-size: 30px 30px;
+  }
+
+  .bento-card {
+    @apply glass-card rounded-2xl p-6 transition-all duration-300;
+  }
+
+  .bento-card:hover {
+    border-color: hsl(217 91% 60% / 0.3);
+    box-shadow: 0 0 30px hsl(217 91% 60% / 0.06);
+    transform: translateY(-2px);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
