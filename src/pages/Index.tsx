@@ -107,23 +107,25 @@ const Index = () => {
 
                   {/* Profile Image - spans 1 column */}
                   <div className="md:col-span-1 relative group">
-                    <img
-                      src={pranayImg}
-                      alt="Pranadeep Devasani"
-                      className="w-full h-80 md:h-96 lg:h-[400px] rounded-2xl object-cover group-hover:scale-105 transition-transform duration-700 shadow-2xl"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-transparent to-transparent rounded-2xl" />
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <div className="flex gap-2">
-                        <a href="https://www.linkedin.com/in/devasani-pranadeep" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-lg bg-background/60 backdrop-blur flex items-center justify-center text-foreground hover:text-primary transition-colors">
-                          <Linkedin size={14} />
-                        </a>
-                        <a href="https://github.com/devasanipranadeep" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-lg bg-background/60 backdrop-blur flex items-center justify-center text-foreground hover:text-primary transition-colors">
-                          <Github size={14} />
-                        </a>
-                        <a href="mailto:devasanipranadeep@gmail.com" className="w-8 h-8 rounded-lg bg-background/60 backdrop-blur flex items-center justify-center text-foreground hover:text-primary transition-colors">
-                          <Mail size={14} />
-                        </a>
+                    <div className="relative w-full h-60 md:h-80 lg:h-96 xl:h-[400px] overflow-hidden rounded-2xl">
+                      <img
+                        src={pranayImg}
+                        alt="Pranadeep Devasani"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-transparent to-transparent rounded-2xl" />
+                      <div className="absolute bottom-4 left-4 right-4">
+                        <div className="flex gap-2">
+                          <a href="https://www.linkedin.com/in/devasani-pranadeep" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-lg bg-background/60 backdrop-blur flex items-center justify-center text-foreground hover:text-primary transition-colors">
+                            <Linkedin size={14} />
+                          </a>
+                          <a href="https://github.com/devasanipranadeep" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-lg bg-background/60 backdrop-blur flex items-center justify-center text-foreground hover:text-primary transition-colors">
+                            <Github size={14} />
+                          </a>
+                          <a href="mailto:devasanipranadeep@gmail.com" className="w-8 h-8 rounded-lg bg-background/60 backdrop-blur flex items-center justify-center text-foreground hover:text-primary transition-colors">
+                            <Mail size={14} />
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>
