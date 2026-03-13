@@ -68,9 +68,8 @@ const Index = () => {
                       Open to opportunities
                     </motion.div>
 
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold leading-[1.1] mb-4">
-                      <span className="text-foreground">Pranadeep</span>
-                      <br />
+                    <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-display font-bold leading-[1.1] mb-4">
+                      <span className="text-foreground">Pranadeep </span>
                       <span className="gradient-text">Devasani</span>
                     </h1>
 
