@@ -25,6 +25,18 @@ const Index = () => {
     },
   });
 
+  const { data: resumeUrl } = useQuery({
+    queryKey: ["public-resume"],
+    queryFn: async () => {
+      const { data, error } = await supabase.storage.from('resumes').list();
+      if (error || !data || data.length === 0) {
+        return "/Resume.pdf"; // Fallback to old resume
+      }
+      const { data: { publicUrl } } = supabase.storage.from('resumes').getPublicUrl(data[0].name);
+      return publicUrl;
+    },
+  });
+
   const topSkills = (skills ?? []).slice(0, 6);
 
   return (
@@ -85,7 +97,7 @@ const Index = () => {
                         Contact Me
                       </Link>
                       <a
-                        href="/Resume.pdf"
+                        href={resumeUrl || "/Resume.pdf"}
                         download
                         className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl glass-card text-foreground text-sm font-medium hover:bg-secondary transition-colors"
                       >
