@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Outlet, useNavigate, Link, useLocation } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
-import { LayoutDashboard, FolderKanban, Brain, FlaskConical, Award, MessageSquare, LogOut, ArrowLeft } from "lucide-react";
+import { LayoutDashboard, FolderKanban, Brain, FlaskConical, Award, MessageSquare, LogOut, ArrowLeft, FileText } from "lucide-react";
 
 const navItems = [
   { to: "/admin", label: "Dashboard", icon: LayoutDashboard, end: true },
@@ -9,6 +9,7 @@ const navItems = [
   { to: "/admin/skills", label: "Skills", icon: Brain },
   { to: "/admin/research", label: "Research", icon: FlaskConical },
   { to: "/admin/certifications", label: "Certifications", icon: Award },
+  { to: "/admin/resume", label: "Resume", icon: FileText },
   { to: "/admin/contact", label: "Messages", icon: MessageSquare },
 ];
 

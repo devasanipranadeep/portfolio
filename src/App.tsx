@@ -19,6 +19,7 @@ import AdminProjects from "./pages/admin/AdminProjects";
 import AdminSkills from "./pages/admin/AdminSkills";
 import AdminResearch from "./pages/admin/AdminResearch";
 import AdminCertifications from "./pages/admin/AdminCertifications";
+import AdminResume from "./pages/admin/AdminResume";
 import AdminContact from "./pages/admin/AdminContact";
 import NotFound from "./pages/NotFound";
 
@@ -47,6 +48,7 @@ const App = () => (
             <Route path="skills" element={<AdminSkills />} />
             <Route path="research" element={<AdminResearch />} />
             <Route path="certifications" element={<AdminCertifications />} />
+            <Route path="resume" element={<AdminResume />} />
             <Route path="contact" element={<AdminContact />} />
           </Route>
 
