@@ -43,7 +43,7 @@ const Index = () => {
     <PageWrapper>
       <div className="relative min-h-screen mesh-gradient noise-overlay">
         {/* Hero Bento Section */}
-        <section className="relative z-10 pt-28 pb-8">
+        <section className="relative z-10 pt-20 md:pt-28 pb-8">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-12 gap-4 auto-rows-auto">
 
