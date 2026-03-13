@@ -77,37 +77,15 @@ const Index = () => {
                       AI & Data Science Engineer
                     </p>
 
-                    <p className="text-muted-foreground max-w-md mb-8 text-sm leading-relaxed">
+                    <p className="text-muted-foreground max-w-md mb-6 text-sm leading-relaxed">
                       Masters in Data Science student building intelligent systems
                       that transform raw data into actionable insights.
                     </p>
-
-                    <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
-                      <Link
-                        to="/projects"
-                        className="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-opacity"
-                      >
-                        View Projects <ArrowRight size={14} />
-                      </Link>
-                      <Link
-                        to="/contact"
-                        className="inline-flex items-center justify-center px-4 sm:px-5 py-2.5 rounded-xl glass-card text-foreground text-sm font-medium hover:bg-secondary transition-colors"
-                      >
-                        Contact Me
-                      </Link>
-                      <a
-                        href={resumeUrl || "/Resume.pdf"}
-                        download
-                        className="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl glass-card text-foreground text-sm font-medium hover:bg-secondary transition-colors"
-                      >
-                        <Download size={14} /> Resume
-                      </a>
-                    </div>
                   </div>
 
                   {/* Profile Image - spans 1 column */}
                   <div className="md:col-span-1 relative group">
-                    <div className="relative w-full h-60 md:h-80 lg:h-96 xl:h-[400px] overflow-hidden rounded-2xl">
+                    <div className="relative w-full h-60 sm:h-72 md:h-64 lg:h-96 xl:h-[400px] overflow-hidden rounded-2xl">
                       <img
                         src={pranayImg}
                         alt="Pranadeep Devasani"
@@ -129,6 +107,36 @@ const Index = () => {
                       </div>
                     </div>
                   </div>
+
+                  {/* Buttons Section - spans full width below photo on desktop */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4 }}
+                    className="md:col-span-full mt-4 md:mt-6"
+                  >
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3 w-full">
+                      <Link
+                        to="/projects"
+                        className="inline-flex items-center justify-center gap-2 px-3 sm:px-4 md:px-5 py-2.5 rounded-xl bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-opacity"
+                      >
+                        View Projects <ArrowRight size={14} />
+                      </Link>
+                      <Link
+                        to="/contact"
+                        className="inline-flex items-center justify-center px-3 sm:px-4 md:px-5 py-2.5 rounded-xl glass-card text-foreground text-sm font-medium hover:bg-secondary transition-colors"
+                      >
+                        Contact Me
+                      </Link>
+                      <a
+                        href={resumeUrl || "/Resume.pdf"}
+                        download
+                        className="inline-flex items-center justify-center gap-2 px-3 sm:px-4 md:px-5 py-2.5 rounded-xl glass-card text-foreground text-sm font-medium hover:bg-secondary transition-colors"
+                      >
+                        <Download size={14} /> Resume
+                      </a>
+                    </div>
+                  </motion.div>
                 </div>
               </motion.div>
 
@@ -171,23 +179,23 @@ const Index = () => {
                 <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">Highlights</h3>
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-muted-foreground">Education</span>
-                    <span className="text-sm text-foreground font-medium">M.S. Data Science</span>
+                    <span className="text-sm text-muted-foreground min-w-[80px]">Education</span>
+                    <span className="text-sm text-foreground font-medium text-right">M.S. Data Science</span>
                   </div>
                   <div className="h-px bg-border" />
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-muted-foreground">Specialization</span>
-                    <span className="text-sm text-foreground font-medium">AI & ML</span>
+                    <span className="text-sm text-muted-foreground min-w-[80px]">Specialization</span>
+                    <span className="text-sm text-foreground font-medium text-right">AI & ML</span>
                   </div>
                   <div className="h-px bg-border" />
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-muted-foreground">Projects</span>
-                    <span className="text-sm text-foreground font-medium">{projects?.length ?? 0}+</span>
+                    <span className="text-sm text-muted-foreground min-w-[80px]">Projects</span>
+                    <span className="text-sm text-foreground font-medium text-right">{projects?.length ?? 0}+</span>
                   </div>
                   <div className="h-px bg-border" />
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-muted-foreground">Focus</span>
-                    <span className="text-sm text-foreground font-medium">Deep Learning</span>
+                    <span className="text-sm text-muted-foreground min-w-[80px]">Focus</span>
+                    <span className="text-sm text-foreground font-medium text-right">Deep Learning</span>
                   </div>
                 </div>
               </motion.div>
