@@ -83,23 +83,23 @@ const Index = () => {
                       that transform raw data into actionable insights.
                     </p>
 
-                    <div className="flex flex-wrap gap-3">
+                    <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
                       <Link
                         to="/projects"
-                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-opacity"
+                        className="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-opacity"
                       >
                         View Projects <ArrowRight size={14} />
                       </Link>
                       <Link
                         to="/contact"
-                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl glass-card text-foreground text-sm font-medium hover:bg-secondary transition-colors"
+                        className="inline-flex items-center justify-center px-4 sm:px-5 py-2.5 rounded-xl glass-card text-foreground text-sm font-medium hover:bg-secondary transition-colors"
                       >
                         Contact Me
                       </Link>
                       <a
                         href={resumeUrl || "/Resume.pdf"}
                         download
-                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl glass-card text-foreground text-sm font-medium hover:bg-secondary transition-colors"
+                        className="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl glass-card text-foreground text-sm font-medium hover:bg-secondary transition-colors"
                       >
                         <Download size={14} /> Resume
                       </a>
